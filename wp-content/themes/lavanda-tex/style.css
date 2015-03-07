@@ -439,9 +439,9 @@ a:hover {
 .to-order-wrap {
   overflow: hidden;
 }
-.goods-order-wrap {
+/*.goods-order-wrap {
   display: none;
-}
+}*/
 .no-sidebar hr {
   margin-left: 0;
 }
@@ -610,7 +610,7 @@ a:hover {
 .footer .foot-menu ul li a:hover {
   text-decoration: underline;
 }
-#basic-modal-content {
+#basic-modal-content, #simplemodal_order {
   display:none;
 }
 #simplemodal-overlay {
@@ -636,14 +636,14 @@ a:hover {
 /***** POPUP *****/
 /*****************/
 
-.block_popup {
+.block_popup, .goods-order-wrap {
   background: #ece4cf;
   border-radius: 6px;
   box-shadow: 5px 5px 11px #000;
   padding: 30px 30px 20px;
   position: absolute;
 }
-.block_popup h3 {
+.block_popup h3, .goods-order-wrap h3 {
   color: #694682;
   font: 20px "opensans";
   margin: 0 0 -5px;

@@ -13,7 +13,11 @@ jQuery(document).ready(function(){
   	});
 
 	jQuery('.to-order').click(function(){
-		jQuery('.goods-order-wrap').show();
+		jQuery('#simplemodal_order').modal({
+        	focus: false,
+        	minHeight: 345,
+        	minWidth: 511
+    	});
 		return false;
 	});
 

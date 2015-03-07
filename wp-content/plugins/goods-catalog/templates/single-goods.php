@@ -64,10 +64,14 @@ if (have_posts()) {
                 <?php the_content(); ?>
             </div>
             
-            
-            <div class="goods-order-wrap">
-                <?php insert_cform('3'); ?>
+            <div id="simplemodal_order">
+                <div class="goods-order-wrap">
+                    <h3>Заказать</h3>
+                    <hr />
+                    <?php insert_cform('3'); ?>
+                </div>
             </div>
+            
         </div>
         <?php
     }
