@@ -7,7 +7,8 @@ jQuery(document).ready(function(){
 
 	jQuery('.showpopup').click(function (e) {
     	jQuery('#basic-modal-content').modal({
-        	focus: false
+        	focus: false,
+        	overlayClose: true
     	});
     	return false;
   	});
@@ -16,7 +17,8 @@ jQuery(document).ready(function(){
 		jQuery('#simplemodal_order').modal({
         	focus: false,
         	minHeight: 345,
-        	minWidth: 511
+        	minWidth: 511,
+        	overlayClose: true
     	});
 		return false;
 	});
