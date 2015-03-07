@@ -409,8 +409,13 @@ a:hover {
 .wrap-img {
   margin-top: 19px;
 }
-.wrap-polntx .frame-slider {
+.wrap-polntx .frame-goods {
+  background: url("images/frame-polntx.gif") no-repeat;
+  height: 281px;
+  position: absolute;
+  right: 23px;
   top: 45px;
+  width: 737px;
 }
 .contact-form .cf-sb, .goods-order .cf-sb {
   width: 450px;

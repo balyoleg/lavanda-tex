@@ -38,7 +38,7 @@ if (have_posts()) {
                         the_post_thumbnail('goods-polntx', array('class' => 'goods-single-thumb'));
                     echo '</a>';
                 echo '</div>';
-                echo '<div class="frame-slider"></div>';
+                echo '<div class="frame-goods"></div>';
             } 
             ?>
                 <h1><?php the_title(); ?></h1>
