@@ -63,9 +63,7 @@ if (have_posts()) {
             <div class="wysiwyg">
                 <?php the_content(); ?>
             </div>
-            <div class="to-order-wrap">
-                <a class="to-order" href="#">Заказать</a>    
-            </div>
+            
             
             <div class="goods-order-wrap">
                 <?php insert_cform('3'); ?>
