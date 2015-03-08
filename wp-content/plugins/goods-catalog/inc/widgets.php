@@ -32,23 +32,47 @@ class goods_categories_widget extends WP_Widget {
             echo $args['before_title'] . $title . $args['after_title'];
         }
 
-        // This is where the code displays the output
-        $taxonomy = 'goods_category';
-        $orderby = 'name';
-        $show_count = 0;      // 1 for yes, 0 for no
-        $pad_counts = 0;      // do not count products in subcategories
-        $hierarchical = 1;      // 1 for yes, 0 for no
+        // // This is where the code displays the output
+        // $taxonomy = 'goods_category';
+        // $orderby = 'name';
+        // $show_count = 0;      // 1 for yes, 0 for no
+        // $pad_counts = 0;      // do not count products in subcategories
+        // $hierarchical = 1;      // 1 for yes, 0 for no
 
-        $cat_args = array(
-            'taxonomy' => $taxonomy,
-            'orderby' => $orderby,
-            'show_count' => $show_count,
-            'pad_counts' => $pad_counts,
-            'hierarchical' => $hierarchical,
-            'title_li' => ''
-        );
+        // $cat_args = array(
+        //     'taxonomy' => $taxonomy,
+        //     'orderby' => $orderby,
+        //     'show_count' => $show_count,
+        //     'pad_counts' => $pad_counts,
+        //     'hierarchical' => $hierarchical,
+        //     'title_li' => ''
+        // );
+        $category_id = get_query_var('cat');
+        $args = array(
+                        'type'                     => 'goods',
+                        'taxonomy'                 => 'goods_category',
+                        'hide_empty'               => 1,
+                        'parent'                   => 0,
+                        'orderby'                  => 'ID',
+                        'child_of'                 => 0,
+                        'hierarchical'             => 1,
+                    );
+        $cats = get_categories($args, $category_id); // Получаем список всех категорий
         echo '<ul>';
-        wp_list_categories($cat_args);
+        foreach ($cats as $cat) {
+            echo "<li><a href='/goods_category/" . $cat->slug ."'>". $cat->cat_name."</a>"; // Получаем название одной категории
+            echo "<ul class='children'>";
+                $post_goods = new WP_Query( array('goods_category' => $cat->category_nicename) ); ?>
+                <?php if($post_goods->have_posts()) : ?>
+                        <?php if($post_goods->have_posts()) : while ($post_goods->have_posts()) : $post_goods->the_post(); ?>
+                            <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                        <?php endwhile; ?>
+                        <?php endif; ?>
+                <?php endif;
+                wp_reset_postdata();
+            echo "</ul>";
+            echo "</li>";
+        }
         echo '</ul>';
 
         echo $args['after_widget'];

@@ -23,5 +23,27 @@ jQuery(document).ready(function(){
 		return false;
 	});
 
+    
+    resize_elements('.catalog-wrap .wrap_category_list');
+
+    function resize_elements( selector )
+    {
+        if(selector != '')
+        {
+            var maxHeight = 0;
+            jQuery(selector).each(function(){
+                if(maxHeight < jQuery(this).height())
+                {
+                    maxHeight = jQuery(this).height();
+                }
+            });
+
+            if(maxHeight > 0)
+            {
+                jQuery(selector).height(maxHeight);
+            }
+        }
+    }
+
 // end document ready
 });

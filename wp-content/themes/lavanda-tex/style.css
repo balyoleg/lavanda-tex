@@ -446,6 +446,10 @@ a:hover {
 .no-sidebar hr {
   margin-left: 0;
 }
+.wrap_category_list {
+  float: left;
+  width: 50%;
+}
 /* Left Sidebar
 -----------------------------------------------------------------------------*/
 .left-sidebar {

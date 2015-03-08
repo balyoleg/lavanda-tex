@@ -42,21 +42,23 @@ $args = array(
                 'hierarchical'             => 1,
             );
 $cats = get_categories($args, $category_id); // Получаем список всех категорий
-    foreach ($cats as $cat) {
-        echo "<h3>".$cat->cat_name."</h3>"; // Получаем название одной категории
-        echo "<ul class='uldotted'>";
-            $post_goods = new WP_Query( array('goods_category' => $cat->category_nicename) ); ?>
-            <?php if($post_goods->have_posts()) : ?>
-                <div class="aaa">
-                    <?php if($post_goods->have_posts()) : while ($post_goods->have_posts()) : $post_goods->the_post(); ?>
-                        <a href="#"><?php the_title(); ?></a><br />
-                    <?php endwhile; ?>
-                    <?php endif; ?>
-                </div>
-            <?php endif;
-            wp_reset_postdata();
-        echo "</ul>";
-    }
+foreach ($cats as $cat) {
+    echo "<div class='wrap_category_list'>";
+    echo "<h3><a href='/goods_category/" . $cat->slug ."'>". $cat->cat_name."</a></h3>"; // Получаем название одной категории
+    echo "<div class='uldotted'>";
+        $post_goods = new WP_Query( array('goods_category' => $cat->category_nicename) ); ?>
+        <?php if($post_goods->have_posts()) : ?>
+            <div class="aaa">
+                <?php if($post_goods->have_posts()) : while ($post_goods->have_posts()) : $post_goods->the_post(); ?>
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
+                <?php endwhile; ?>
+                <?php endif; ?>
+            </div>
+        <?php endif;
+        wp_reset_postdata();
+    echo "</div>";
+    echo "</div>";
+}
 include 'content-goods_category.php';
 
 echo '</div>'; // catalog-inner
