@@ -122,6 +122,7 @@ a:hover {
   position: absolute;
   top: -20px;
   width: 430px;
+  z-index: 9;
 }
 .header .wrap-head .contact_head {
   float: right;
@@ -166,7 +167,9 @@ a:hover {
 .header .main-menu {
   height: 41px;
   overflow: hidden;
+  position: relative;
   width: 100%;
+  z-index: 10;
 }
 .header .main-menu .widget-error {
   color: #f00;
@@ -294,6 +297,7 @@ a:hover {
   padding: 0;
 }
 .no-sidebar .breadcrumbs ul li {
+  color: #694682;
   float: left;
   list-style: none;
   margin: 0 13px 0 18px;
@@ -393,12 +397,12 @@ a:hover {
   margin-left: 0;
 }
 .item-catalog {
-  border: 1px solid #b9b099;
+  /*border: 1px solid #b9b099;*/
   float: left;
   margin: 0 0 30px 30px;
   width: 239px;
 }
-.frame-slider {
+.frame-slider, .frame-goods {
   background: url("images/frame.gif") no-repeat;
   height: 300px;
   position: absolute;
@@ -407,16 +411,16 @@ a:hover {
   width: 783px;
 }
 .wrap-img {
-  height: 248px;
+  height: 280px;
   margin-top: 19px;
 }
 .wrap-polntx .frame-goods {
-  background: url("images/frame-polntx.gif") no-repeat;
-  height: 281px;
+  /*background: url("images/frame-polntx.gif") no-repeat;*/
+  height: 300px;
   position: absolute;
-  right: 23px;
+  /*right: 23px;*/
   top: 45px;
-  width: 737px;
+  width: 783px;
 }
 .contact-form .cf-sb, .goods-order .cf-sb {
   width: 450px;
@@ -450,6 +454,17 @@ a:hover {
   float: left;
   width: 50%;
 }
+.ngg-gallery-thumbnail-box {
+  float: left;
+  margin-right: 5px !important;
+}
+.ngg-gallery-thumbnail-box:nth-child(5n) {
+  margin-right: 0 !important;
+}
+.ngg-fancybox > img {
+  height: 102px;
+  width: 136px;
+}
 /* Left Sidebar
 -----------------------------------------------------------------------------*/
 .left-sidebar {
@@ -481,13 +496,26 @@ a:hover {
   width: 42px;
 }
 .left-sidebar .widget ul {
-  padding-left: 26px;
+  padding-left: 10px;
 }
 .left-sidebar .widget ul li {
   list-style: none;
 }
+.left-sidebar .widget ul li .children {
+  padding-left: 20px;
+}
 .left-sidebar .widget ul li .children li {
-  list-style: square outside;
+  list-style: none;
+}
+.left-sidebar .widget ul li .children li:before {
+  color: #694682;
+  content: ".";
+  display: block;
+  float: left;
+  font-size: 40px;
+  margin: -13px 0 0;
+  width: 15px;
+
 }
 .left-sidebar .widget ul li a {
   color: #694682;
@@ -668,7 +696,7 @@ a:hover {
   float: right;
   font: bold 13px "opensans";
   margin: 10px;
-  padding: 5px 30px;
+  /*padding: 5px 30px;*/
   text-decoration: none;
 }
 .block_popup .popup-phone .cf-sb .sendbutton:hover {

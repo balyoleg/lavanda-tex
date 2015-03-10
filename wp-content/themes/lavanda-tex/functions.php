@@ -48,7 +48,7 @@ set_post_thumbnail_size(180, 180);
 add_action( 'after_setup_theme', 'baw_theme_setup' );
 function baw_theme_setup() {
 	//add_image_size( 'category-thumb', 300 ); // 300 pixels wide (and unlimited height)
-	add_image_size( 'goods-polntx', 703, 248, array('left', 'top') ); // (cropped)
+	add_image_size( 'goods-polntx', 748, 264, array('left', 'top') ); // (cropped)
 }
 /**
 * Поддержка виджетов
